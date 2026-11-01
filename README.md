@@ -41,12 +41,31 @@ plus a short SGD loop. It exits non-zero if any required check fails.
 Force a device with `--device cpu|mps|cuda|auto` (default `auto`: MPS, then CUDA if present, then CPU).
 `PYTORCH_ENABLE_MPS_FALLBACK=1` is set by the script so ops unsupported on MPS fall back to CPU.
 
+## Stage 1: dataset (MVTec AD)
+
+Download and place MVTec AD (`bottle`, `hazelnut`, `carpet`) under `data/mvtec_ad/` — see [docs/dataset.md](docs/dataset.md).
+
+```bash
+python -m pip install -r requirements.txt            # torch, torchvision, pillow, numpy
+python -m pip install -r requirements-notebooks.txt  # matplotlib, ipykernel (for notebooks)
+python scripts/dataset_report.py --figures           # validate + reports/dataset_statistics.{json,md}
+python -m unittest discover tests                    # tests/test_real_data.py runs once data is present
+python -m ipykernel install --user --name inspectai  # then pick this kernel in Jupyter/VS Code
+```
+
+Notebooks (in `notebooks/`): `01_dataset_exploration.ipynb`, `02_image_preprocessing.ipynb`.
+
 ## Layout
 
 ```
-inspectai/          Python package (device.py: device selection)
-scripts/            Utility scripts (check_environment.py)
-tests/              unittest tests
+inspectai/          Python package
+  device.py           device selection (MPS / CUDA / CPU)
+  data/               MVTec AD loading, validation, statistics, transforms, Dataset/DataLoader
+scripts/            check_environment.py, dataset_report.py
+notebooks/          exploration and preprocessing notebooks
+docs/               dataset documentation
+reports/            generated dataset statistics (JSON + Markdown, figures)
+tests/              unittest tests (synthetic fixtures + real-data checks)
 requirements.txt    Dependencies
 pyproject.toml      Package metadata
 ```

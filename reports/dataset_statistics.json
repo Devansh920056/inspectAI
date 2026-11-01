@@ -1,0 +1,318 @@
+{
+  "generated_at": "2026-11-01T09:08:20+00:00",
+  "root": "data/mvtec_ad",
+  "categories": {
+    "bottle": {
+      "category": "bottle",
+      "validation": {
+        "ok": true,
+        "n_problems": 0,
+        "n_images_checked": 292,
+        "structural_error": null,
+        "missing_masks": [],
+        "orphan_masks": [],
+        "corrupt_images": [],
+        "size_mismatches": []
+      },
+      "train": {
+        "n_images": 209,
+        "n_normal": 209,
+        "n_defective": 0
+      },
+      "test": {
+        "n_images": 83,
+        "n_normal": 20,
+        "n_defective": 63,
+        "defect_ratio": 0.759
+      },
+      "defect_types": {
+        "broken_large": 20,
+        "broken_small": 22,
+        "contamination": 21
+      },
+      "images": {
+        "formats": {
+          "PNG": 292
+        },
+        "modes": {
+          "RGB": 292
+        },
+        "sizes": {
+          "900x900": 292
+        },
+        "unreadable": 0
+      },
+      "masks": {
+        "n_masks": 63,
+        "inventory": {
+          "formats": {
+            "PNG": 63
+          },
+          "modes": {
+            "L": 63
+          },
+          "sizes": {
+            "900x900": 63
+          },
+          "unreadable": 0
+        },
+        "anomaly_area_fraction": {
+          "min": 0.00575679012345679,
+          "median": 0.05717777777777778,
+          "mean": 0.07616560846560846,
+          "max": 0.27418641975308644
+        },
+        "anomaly_area_fraction_by_defect": {
+          "broken_large": {
+            "min": 0.040903703703703706,
+            "median": 0.11866975308641975,
+            "mean": 0.11702444444444444,
+            "max": 0.27418641975308644
+          },
+          "broken_small": {
+            "min": 0.008846913580246914,
+            "median": 0.02437037037037037,
+            "mean": 0.030682491582491585,
+            "max": 0.0806074074074074
+          },
+          "contamination": {
+            "min": 0.00575679012345679,
+            "median": 0.07247901234567901,
+            "mean": 0.08490141093474426,
+            "max": 0.16527901234567902
+          }
+        },
+        "n_empty_masks": 0
+      },
+      "train_pixel_stats": {
+        "mean": [
+          0.53541,
+          0.53168,
+          0.54796
+        ],
+        "std": [
+          0.36676,
+          0.36667,
+          0.34992
+        ],
+        "n_images": 209,
+        "source": "train/good only, pixel values scaled to [0, 1], RGB order"
+      }
+    },
+    "hazelnut": {
+      "category": "hazelnut",
+      "validation": {
+        "ok": true,
+        "n_problems": 0,
+        "n_images_checked": 501,
+        "structural_error": null,
+        "missing_masks": [],
+        "orphan_masks": [],
+        "corrupt_images": [],
+        "size_mismatches": []
+      },
+      "train": {
+        "n_images": 391,
+        "n_normal": 391,
+        "n_defective": 0
+      },
+      "test": {
+        "n_images": 110,
+        "n_normal": 40,
+        "n_defective": 70,
+        "defect_ratio": 0.6364
+      },
+      "defect_types": {
+        "crack": 18,
+        "cut": 17,
+        "hole": 18,
+        "print": 17
+      },
+      "images": {
+        "formats": {
+          "PNG": 501
+        },
+        "modes": {
+          "RGB": 501
+        },
+        "sizes": {
+          "1024x1024": 501
+        },
+        "unreadable": 0
+      },
+      "masks": {
+        "n_masks": 70,
+        "inventory": {
+          "formats": {
+            "PNG": 70
+          },
+          "modes": {
+            "L": 70
+          },
+          "sizes": {
+            "1024x1024": 70
+          },
+          "unreadable": 0
+        },
+        "anomaly_area_fraction": {
+          "min": 0.0023288726806640625,
+          "median": 0.016158103942871094,
+          "mean": 0.033546366010393416,
+          "max": 0.27658557891845703
+        },
+        "anomaly_area_fraction_by_defect": {
+          "crack": {
+            "min": 0.012811660766601562,
+            "median": 0.04700326919555664,
+            "mean": 0.08400917053222656,
+            "max": 0.27658557891845703
+          },
+          "cut": {
+            "min": 0.00397491455078125,
+            "median": 0.007860183715820312,
+            "mean": 0.008768418255974264,
+            "max": 0.020165443420410156
+          },
+          "hole": {
+            "min": 0.0023288726806640625,
+            "median": 0.012363910675048828,
+            "mean": 0.013335545857747396,
+            "max": 0.029346466064453125
+          },
+          "print": {
+            "min": 0.015165328979492188,
+            "median": 0.02435779571533203,
+            "mean": 0.026292800903320312,
+            "max": 0.04827404022216797
+          }
+        },
+        "n_empty_masks": 0
+      },
+      "train_pixel_stats": {
+        "mean": [
+          0.24006,
+          0.17684,
+          0.17134
+        ],
+        "std": [
+          0.16887,
+          0.07598,
+          0.04384
+        ],
+        "n_images": 391,
+        "source": "train/good only, pixel values scaled to [0, 1], RGB order"
+      }
+    },
+    "carpet": {
+      "category": "carpet",
+      "validation": {
+        "ok": true,
+        "n_problems": 0,
+        "n_images_checked": 397,
+        "structural_error": null,
+        "missing_masks": [],
+        "orphan_masks": [],
+        "corrupt_images": [],
+        "size_mismatches": []
+      },
+      "train": {
+        "n_images": 280,
+        "n_normal": 280,
+        "n_defective": 0
+      },
+      "test": {
+        "n_images": 117,
+        "n_normal": 28,
+        "n_defective": 89,
+        "defect_ratio": 0.7607
+      },
+      "defect_types": {
+        "color": 19,
+        "cut": 17,
+        "hole": 17,
+        "metal_contamination": 17,
+        "thread": 19
+      },
+      "images": {
+        "formats": {
+          "PNG": 397
+        },
+        "modes": {
+          "RGB": 397
+        },
+        "sizes": {
+          "1024x1024": 397
+        },
+        "unreadable": 0
+      },
+      "masks": {
+        "n_masks": 89,
+        "inventory": {
+          "formats": {
+            "PNG": 89
+          },
+          "modes": {
+            "L": 89
+          },
+          "sizes": {
+            "1024x1024": 89
+          },
+          "unreadable": 0
+        },
+        "anomaly_area_fraction": {
+          "min": 0.0016498565673828125,
+          "median": 0.014757156372070312,
+          "mean": 0.02106435111399447,
+          "max": 0.0801706314086914
+        },
+        "anomaly_area_fraction_by_defect": {
+          "color": {
+            "min": 0.0034952163696289062,
+            "median": 0.015705108642578125,
+            "mean": 0.018723437660618833,
+            "max": 0.06272411346435547
+          },
+          "cut": {
+            "min": 0.031785011291503906,
+            "median": 0.04345989227294922,
+            "mean": 0.04881398818072151,
+            "max": 0.0801706314086914
+          },
+          "hole": {
+            "min": 0.006709098815917969,
+            "median": 0.018362998962402344,
+            "mean": 0.022501608904670265,
+            "max": 0.056357383728027344
+          },
+          "metal_contamination": {
+            "min": 0.0016498565673828125,
+            "median": 0.0038995742797851562,
+            "mean": 0.004856951096478631,
+            "max": 0.013484001159667969
+          },
+          "thread": {
+            "min": 0.0018062591552734375,
+            "median": 0.006358146667480469,
+            "mean": 0.01179203234220806,
+            "max": 0.05318927764892578
+          }
+        },
+        "n_empty_masks": 0
+      },
+      "train_pixel_stats": {
+        "mean": [
+          0.36295,
+          0.35002,
+          0.35608
+        ],
+        "std": [
+          0.14507,
+          0.13995,
+          0.12768
+        ],
+        "n_images": 280,
+        "source": "train/good only, pixel values scaled to [0, 1], RGB order"
+      }
+    }
+  }
+}

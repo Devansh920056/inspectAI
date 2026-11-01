@@ -5,3 +5,5 @@
 # need a fully reproducible lock.
 torch>=2.4,<3
 numpy>=1.26,<3
+torchvision>=0.18,<1
+pillow>=10

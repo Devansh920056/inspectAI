@@ -13,12 +13,12 @@ dist/
 .ipynb_checkpoints/
 
 # Data, checkpoints and experiment outputs (never commit)
-data/
-datasets/
-checkpoints/
-runs/
-logs/
-outputs/
+/data/
+/datasets/
+/checkpoints/
+/runs/
+/logs/
+/outputs/
 *.pt
 *.pth
 *.ckpt

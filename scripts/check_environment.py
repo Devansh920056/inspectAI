@@ -70,6 +70,23 @@ def section(title: str) -> None:
     print(f"\n== {title} ==")
 
 
+def in_isolated_env() -> bool:
+    """True inside a venv/virtualenv or a non-base conda environment.
+
+    Conda envs are detected from the interpreter's own prefix rather than
+    CONDA_PREFIX, so they are recognised however they were activated.
+    """
+    if sys.prefix != getattr(sys, "base_prefix", sys.prefix):
+        return True
+    prefix = Path(sys.prefix)
+    if not (prefix / "conda-meta").is_dir():
+        return False
+    conda_exe = os.environ.get("CONDA_EXE")
+    if conda_exe:  # conda base lives two levels above bin/conda
+        return prefix.resolve() != Path(conda_exe).resolve().parents[1]
+    return not (prefix / "condabin").exists()
+
+
 def report_system() -> None:
     section("System")
     if sys.platform == "darwin":
@@ -83,14 +100,7 @@ def report_system() -> None:
     usage = shutil.disk_usage(REPO_ROOT)
     print(f"  Disk (repo)   : {usage.free / 1024**3:.0f} GB free of {usage.total / 1024**3:.0f} GB")
     print(f"  Python        : {platform.python_version()} ({sys.executable})")
-    is_venv = sys.prefix != getattr(sys, "base_prefix", sys.prefix)
-    # A conda env is not a venv (prefix == base_prefix) but is an isolated env
-    # unless it is conda's "base".
-    is_conda_env = (
-        os.environ.get("CONDA_PREFIX") == sys.prefix
-        and os.environ.get("CONDA_DEFAULT_ENV", "base") != "base"
-    )
-    in_venv = is_venv or is_conda_env
+    in_venv = in_isolated_env()
     print(f"  Virtualenv    : {'yes (' + sys.prefix + ')' if in_venv else 'no'}")
 
     if under_rosetta():
