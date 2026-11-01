@@ -1,0 +1,7 @@
+# InspectAI core dependencies (Stage 0).
+# Ranges, not exact pins: the PyTorch wheel for macOS (Apple Silicon) includes
+# MPS support, and the resolver should pick the newest compatible build.
+# After a successful install, record exact versions with `pip freeze` if you
+# need a fully reproducible lock.
+torch>=2.4,<3
+numpy>=1.26,<3
